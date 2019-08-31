@@ -30,5 +30,15 @@ public class LinkedList {
             }
             currentNode.setNextNode(temNode);
         }
+        increaseCounter();
+    }
+    private static int getCounter(){
+        return counter;
+    }
+    private static void increaseCounter(){
+        counter++;
+    }
+    public int size(){
+        return getCounter();
     }
 }
