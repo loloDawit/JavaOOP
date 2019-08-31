@@ -36,11 +36,11 @@ class Node {
         data = dataValue;
     }
     // get the next node
-    public Node getNode(){
+    public Node getNextNode(){
         return next;
     }
     // set node
-    public void setNode(Node nextNode){
+    public void setNextNode(Node nextNode){
         next = nextNode;
     }
     
