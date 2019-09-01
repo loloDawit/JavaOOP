@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author dave
  */
 public class LinkedListTest {
+    LinkedList linkedList = new LinkedList();
     
     public LinkedListTest() {
     }
@@ -22,9 +23,9 @@ public class LinkedListTest {
      */
     @Test
     public void testAdd() {
-        LinkedList linkedList = new LinkedList();
         linkedList.add(10);
-        assertEquals(1, linkedList.size());
+        linkedList.add(20);
+        assertEquals(2, linkedList.size());
         
     }
 
@@ -33,6 +34,35 @@ public class LinkedListTest {
      */
     @Test
     public void testSize() {
+        
+    }
+
+    /**
+     * Test of add method, of class LinkedList.
+     */
+    @Test
+    public void testAdd_Object() {
+    }
+
+    /**
+     * Test of add method, of class LinkedList.
+     */
+    @Test
+    public void testAdd_Object_int() {
+        double data1 = 30;
+        double data2 = 40;
+        linkedList.add(data1, 2);
+        linkedList.add(data2);
+        assertEquals(4, linkedList.size());
+    }
+
+    /**
+     * Test of get method, of class LinkedList.
+     */
+    @Test
+    public void testGet() {
+        Object target = 10; // index = 1
+        assertEquals(target, linkedList.get(0));
         
     }
     
