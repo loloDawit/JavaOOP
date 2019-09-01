@@ -38,7 +38,41 @@ public class LinkedList {
     private static void increaseCounter(){
         counter++;
     }
+    private static void decreseCounter(){
+        counter--;
+    }
     public int size(){
         return getCounter();
+    }
+    // add elements at a specific location
+    public void add(Object data, int index){
+        Node tempNode = new Node(data);
+        Node currentNode = head; 
+        if(currentNode != null){
+            for(int i=0; i < index && currentNode.getNextNode() != null; i++){
+                currentNode = currentNode.getNextNode();
+            }
+        }
+        tempNode.setNextNode(currentNode.getNextNode());
+        currentNode.setNextNode(tempNode);
+        increaseCounter();
+    }
+    // return specific value from an index
+    public Object get(int index){
+        Node currentNode = null; 
+        if(index < 0){
+            return null; 
+        }
+        while(head != null){
+            currentNode = head.getNextNode();
+            for(int i=0; i<index; i++){
+                if(currentNode.getNextNode() == null){
+                    return  null;
+                }
+                currentNode = currentNode.getNextNode();
+            }
+            return currentNode.getDataObject();
+        }
+        return  currentNode; 
     }
 }
